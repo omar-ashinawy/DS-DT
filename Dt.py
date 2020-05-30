@@ -248,7 +248,7 @@ def save_test():
     else:
         testfile = filedialog.askopenfilename(title = "Select Test File", initialdir = "/", filetypes = (("CSV File", "*.csv"), ("All Files", "*.*")) )
         dataset2 = pd.read_csv(testfile)
-        X_test = dataset2.iloc[:, :-2].values
+        X_test = dataset2.iloc[:, 0:24].values
         y_test = our_classifier.predict(X_test)
         messagebox.showinfo(title = "Info", message = "Choose directory to save test results in")
         dir_name = filedialog.askdirectory(title = "Choose Directory", initialdir = "/")
