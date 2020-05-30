@@ -77,13 +77,6 @@ class TreeNode:
         sortedInd = np.argsort(colToBeSplit_X)
         colToBeSplit_X = colToBeSplit_X[sortedInd]
         colToBeSplit_Y = labels[sortedInd]
-        """
-        boundary = []
-        boundary = np.nonzero(colToBeSplit_X)[0]
-        split = (colToBeSplit_X[int(boundary[0]) - 1] + colToBeSplit_X[int(boundary[0])]) / 2
-        ig = self.informationGain(colToBeSplit_X, colToBeSplit_Y, split)
-        return ig, split
-        """
         boundaries = np.nonzero(colToBeSplit_Y[:-1] != colToBeSplit_Y[1:])[0]
         
         best_split = None
